@@ -37,7 +37,7 @@ bool Parser::parseFile(const QString &path)
 
 	for(int i = 0; i < fileList.size(); i++)
 	{
-		const QString &filePath = fileList.at(i);
+		QString filePath = fileList.at(i);
 		QFile file(filePath);
 		QStringList lineList;
 
