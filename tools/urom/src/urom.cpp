@@ -517,11 +517,11 @@ bool URom::generateDataMemory()
 	instruction = Instruction(0b00000010, Instruction::Arg::Val256, Instruction::Arg::Addr);
 	instruction.addStep(Step(Step::BusAR::RAM, Step::BusAW::I));
 	instruction.addStep(Step(Step::BusAR::Default, Step::BusAW::PC_PLUS));
-	instruction.addStep(Step(Step::BusAR::RAM, Step::BusAW::D));
-	instruction.addStep(Step(Step::BusAR::Default, Step::BusAW::PC_PLUS));
 	instruction.addStep(Step(Step::BusAR::RAM, Step::BusAW::MA, Step::BusB::Low));
 	instruction.addStep(Step(Step::BusAR::Default, Step::BusAW::PC_PLUS));
 	instruction.addStep(Step(Step::BusAR::RAM, Step::BusAW::MA, Step::BusB::High));
+	instruction.addStep(Step(Step::BusAR::Default, Step::BusAW::PC_PLUS));
+	instruction.addStep(Step(Step::BusAR::RAM, Step::BusAW::D));
 	instruction.addStep(Step(Step::BusAR::D, Step::BusAW::RAM, Step::BusB::Default, Step::BusC::MA));
 	instruction.addStep(Step(Step::BusAR::Default, Step::BusAW::RPC_PLUS));
 	status &= this->uRomData.addInstruction(instruction);
