@@ -65,8 +65,8 @@ const loadingErrorTooBigText "Error: The OS file is too large"
 ; No arguments
 ; No return
 .main:
-	; Turn on the run led
-	call .xLedSetRunOn
+	; Turn off the run led
+	call .xLedSetRunOff
 	; Turn off the error led
 	call .xLedSetErrorOff
 	clr A
@@ -80,7 +80,12 @@ const loadingErrorTooBigText "Error: The OS file is too large"
 	call .xLcdSetCursorPosY
 	call .printBiosVersion
 	call .playSound
+	; Turn on the run led
+	call .xLedSetRunOn
+	; Load the OS to the memory
 	call .loadOs
+	; Turn off the run led
+	call .xLedSetRunOff
 	; Run OS
 	call 0x0800
 	; Halt execution if it exits OS
