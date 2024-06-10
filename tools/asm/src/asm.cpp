@@ -192,7 +192,7 @@ void Asm::initInstructions(Compiler &compiler)
 	compiler.addInstruction(Instruction("st", 0b11101100, Instruction::Arg::ABXY_0, Instruction::Arg::Addr_0));
 
 	// LOAD_I + PC+1 + LOAD_D +  PC+1 + LOAD_MAL + PC+1 + LOAD_MAH + LOAD + RPC+1
-	compiler.addInstruction(Instruction("st", 0b00000010, Instruction::Arg::Val256_0, Instruction::Arg::Addr_0));
+	compiler.addInstruction(Instruction("st", 0b00000010, Instruction::Arg::Val256_1, Instruction::Arg::Addr_0));
 
 	// LOAD_I + PC+1 + LOAD_D + LOAD + RPC+1
 	compiler.addInstruction(Instruction("stp", 0b00000001, Instruction::Arg::Val256_0));
