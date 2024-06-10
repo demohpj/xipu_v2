@@ -140,8 +140,12 @@ const appNameUnknownNameError "Error: Unknown app"
 	cmp 8, A
 	; 8 < A
 	jl .terminalRunApp_appNameLengthError
+	; Turn on the run led
+	call .xLedSetRunOn
 	; Run load app procedure
 	call .terminalLoadApp
+	; Turn off the run led
+	call .xLedSetRunOff
 	; If load app procedure returned flase then show error message
 	cmp 0, A
 	je .terminalRunApp_loadFail
@@ -152,6 +156,11 @@ const appNameUnknownNameError "Error: Unknown app"
 	ldf 33, Y
 	; Run app
 	call 0x2000
+	; Turn off the error led if needed
+	call .xLedSetErrorOff
+	; Stop playing and clear the buffer if needed
+	call .xSpeakerPause
+	call .xSpeakerClear
 	pop Y
 	pop X
 	pop A
