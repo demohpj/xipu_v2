@@ -277,8 +277,8 @@ external .xStringRead:
 	; 0x20 > A
 	cmp 0x20, A
 	jg .xStringRead_notPrint
-	; 0x80 <= A
-	cmp 0x80, A
+	; 0x7f <= A
+	cmp 0x7f, A
 	jle .xStringRead_notPrint
 	; Respect buffer size limit
 	; 1 >= B
