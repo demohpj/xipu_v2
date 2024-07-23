@@ -52,7 +52,7 @@ Please see the LICENSE.txt file.
 - 64 kB of RAM space. Lower 2 kB are reserved for BIOS stored at EEPROM. The 4 kB at the end of the memory are used as a stack. Rest 58 kB of memory could be used by OS or applications.
 - 1 MHz clock speed. The processor uses a 2 MHz crystal to get two 1 MHz square waves shifted relative to the other about half.
 - The processor uses uROM stored in two EEPROMs.
-- Each instruction could be built from 2 to 16 micro steps. Each micro step took exactly 1 clock tick.
+- Each instruction could be built from 2 to 16 micro steps. Each micro step takes exactly 1 clock tick.
 - Four registers:
 	- A, B - 8-bit general purpose registers.
 	- X, Y - 8-bit auxiliary registers. Could be used mostly as general purpose registers. Together, it can be used as a 16-bit address register.
