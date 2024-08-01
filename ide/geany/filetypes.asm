@@ -16,7 +16,7 @@ stringeol=0x000000;0xe0c0e0;false;false
 extinstruction=0x007f7f;0xffffff;false;false
 
 [keywords]
-instructions=not and or xor shl shr and or xor inc incc dec decc add addc sub subc add addc sub subc incp decp addp subp addp mov clr swap xchg in out ld st stp ldp gp ldpo stpo cmp jmp je jne jg jge jl jle rstsp push pop loope loopz call ret enter leave alloc free ldf stf gpf nop halt
+instructions=not and or xor shl shr inc incc dec decc add addc sub subc incp decp addp subp mov clr swap xchg in out ld st stp ldp gp ldpo stpo cmp jmp je jne jg jge jl jle rstsp push pop loope loopz call ret enter leave alloc free ldf stf gpf nop halt
 registers=
 directives=external global var const include map
 
